@@ -1,0 +1,59 @@
+@font-face {
+    font-family: Bitter;
+    src: url('./assets/fonts/Bitter-Regular.otf');
+
+
+}
+
+body, .home-section-text {
+    font-family: 'Bitter' !important;
+}
+
+
+header.nav-bg {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    margin-bottom: 10px;
+
+}
+
+a.btn {
+    background-color: #74A6AD;
+    font-color: black;
+}
+
+
+.fdb-block.pb-0 {
+    padding-top: 20px;
+    width: 80%;
+    margin: auto;
+    color: #323232; 
+}
+
+
+nav h3 {
+    color: white;
+    vertical-align: center;
+}
+
+.nav-bg {
+    background: #323232;
+    border-bottom: 10px #74A6AD solid;
+}
+
+header .navbar-nav a.nav-link {
+    color: white;
+}
+
+
+
+.nav-link:hover, .nav-link:active {
+    color: white;
+}
+
+.fa.fa-navicon, .fas.fa-user {
+    color: white;
+}
+
+
