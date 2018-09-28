@@ -63,6 +63,7 @@ router.post('/send', function(req, res, next){
     service: 'gmail',
     auth: {
       user: 'dropbookskindle@gmail.com',
+      // Doesnt work
       pass: 'DROPbooks1'
     }
   });
