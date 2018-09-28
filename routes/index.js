@@ -15,6 +15,7 @@ router.get('/login', function(req, res, next) {
 
 router.post('/login', function(req, res, next) {
   console.log(req.body);
+
   res.render('login');
 });
 
@@ -48,7 +49,14 @@ router.get('/logout', function(req, res, next) {
 });
 
 router.get('/send', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  console.log('get request to /send');
+  res.render('send');
+});
+
+router.post('/send', function(req, res, next){
+  console.log("Files lies below!!!");
+  console.log(req.files.book);
+  res.render('send');
 });
 
 
