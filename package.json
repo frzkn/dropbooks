@@ -16,6 +16,7 @@
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "mysql": "^2.16.0",
+    "nodemailer": "^4.6.8",
     "sweetalert2": "^7.28.2"
   }
 }
