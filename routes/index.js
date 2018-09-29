@@ -1,21 +1,31 @@
+// refactor this spaghetti
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 var nodemailer = require('nodemailer');
 var connection = require('./../database/database-module.js').connection;
 
-/* GET home page. */
+
 router.get('/', function(req, res, next) {
   res.render('index');
 });
-
 router.get('/login', function(req, res, next) {
+
   res.render('login');
 });
 
 
 router.post('/login', function(req, res, next) {
-  console.log(req.body);
+  var loginEmail = req.body.email;
+  var loginRegister = req.body.password;
+  console.log(loginEmail+loginRegister);
+
+  connection.query(`select * from users where email="${req.body.email}"` , (err, results, fields) => {
+    if (err)
+      throw err;
+    console.log('results lies below !');
+    console.log(results);
+  });
 
   res.render('login');
 });
@@ -23,7 +33,6 @@ router.post('/login', function(req, res, next) {
 router.get('/register', function(req, res, next) {
   res.render('register');
 });
-
 router.post('/register', function(req, res, next) {
   var email = req.body.email;
   connection.query(`select * from users where email="${req.body.email}"` , (err, results, fields) => {
@@ -58,13 +67,14 @@ router.post('/send', function(req, res, next){
   console.log("Files lies below!!!");
   console.log(req.files.book);
 
+  // TODO implement convert feature for PDFs
+
   // nodemailer
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: 'dropbookskindle@gmail.com',
       // Doesnt work
-      pass: 'DROPbooks1'
     }
   });
   // get user's kindle email address here
@@ -87,10 +97,7 @@ router.post('/send', function(req, res, next){
     else
       console.log(info);
 
-  })
-
-
-
+  });
   res.render('send');
 });
 

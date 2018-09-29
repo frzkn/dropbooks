@@ -57,3 +57,11 @@ header .navbar-nav a.nav-link {
 }
 
 
+.fdb-block .fdb-touch {
+    border-top: solid 5px #74a6ad;
+}
+
+
+.btn {
+    background-color: #74a6ad;
+  }

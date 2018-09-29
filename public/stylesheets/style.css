@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+
+.fdb-block .fdb-touch {
+    border-top: solid 5px #74a6ad;
+  }
