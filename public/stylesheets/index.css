@@ -63,5 +63,10 @@ header .navbar-nav a.nav-link {
 
 
 .btn {
-    background-color: #74a6ad;
-  }
+  background-color: #74a6ad;
+}
+
+
+img.img-fluid {
+  filter: hue-rotate(59deg);
+}
