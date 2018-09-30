@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var fileUpload = require('express-fileupload');
 var nodemailer = require('nodemailer');
+var sessions  = require('client-sessions');
 
 var app = express();
 
@@ -21,9 +22,10 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(cookieSession({
-  name:'session',
-  keys: ['the quick brown fox', 'jumps over the lazy cow']
+app.use(sessions({
+  cookieName:'userSession',
+  secret: 'killyourself',
+  duration: 30 * 60 * 1000
 }));
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -36,6 +38,7 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -47,5 +50,10 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+//app.use(function (req, res, next) => {
+//  //check for session/cookie
+//});
+
 
 module.exports = app;

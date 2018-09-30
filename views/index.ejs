@@ -1,58 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-design-blocks/1.0.2/css/froala_blocks.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" href="stylesheets/index.css">
-    <title> dropbooks - Sending books fast and easily.</title>
-
-  </head>
-  <body style="font-family: Bitter;">
-    <header class="nav-bg" data-block-type="headers" data-id="7">
-      <div class="container">
-        <nav class="navbar navbar-expand-md no-gutters">
-          <div class="col-2 text-left">
-            <a href="index.html">
-              <h3>dropbooks</h3>
-            </a>
-          </div>
-
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse-3" aria-controls="navbarNav6" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon- is disabled ">
-              <i class="fa fa-navicon"> </i>
-            </span>
-          </button>
-
-          <div class="collapse navbar-collapse justify-content-center col-md-8 navbar-collapse-3">
-            <ul class="navbar-nav justify-content-center">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="send">SEND</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="account.html">ACCOUNT</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="team.html">TEAM</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="collapse navbar-collapse justify-content-end col-md-2 navbar-collapse-3">
-            <ul class="navbar-nav">
-              <li class="nav-item login-border">
-                <a class="nav-link login-btn" href="login.html" > LOGIN </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </header>
+<%- include('./header.ejs') %>
 
 
 
@@ -60,11 +6,30 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-10 col-sm-6 m-auto col-md-4 pb-4 pb-md-0">
-            <img alt="image" class="img-fluid br-0" width="450px" src="assets/images/tallphonetrans.png">
+            <span id="animate-book"> <img src="assets/images/cutebook.png" width="100px"alt="" ></span> <span id="animate-book2"><img src="assets/images/cutebook3.png" width="100px"alt="">  </span>
+            <?xml version="1.0" encoding="UTF-8"?>
+
+
+
+            <svg viewBox="0 0 502 502" xmlns="http://www.w3.org/2000/svg">
+              <g>
+              <title>background</title>
+              <rect x="-1" y="-1" width="582" height="402" fill="none"/>
+              </g>
+              <g>
+              <title>Layer 1</title>
+              <!-- <path d="m424.13 50.412c0-22.871-18.541-41.412-41.413-41.412h-263.44c-22.872 0-41.413 18.541-41.413 41.412v357.23h346.27v-357.23z" fill="#F0EFE4"/> -->
+              <path d="m424.13 50.412c0-22.871-18.541-41.412-41.413-41.412h-263.44c-22.872 0-41.413 18.541-41.413 41.412v357.23h346.27v-357.23z" fill="#dcdcdc"/>
+              <path d="m77.864 407.64v41.949c0 22.871 18.541 41.412 41.413 41.412h263.44c22.871 0 41.413-18.541 41.413-41.412v-41.949h-346.27z" fill="#000000"/>
+              <path  d="m434.13 49.412c0-28.349-23.063-51.412-51.413-51.412h-263.44c-28.349 0-51.412 23.063-51.412 51.412v399.18c0 28.349 23.063 51.412 51.413 51.412h263.44c28.35 0 51.413-23.063 51.413-51.412v-399.18h-1e-3zm-346.27 0c0-17.32 14.092-31.412 31.413-31.412h263.44c17.321 0 31.413 14.092 31.413 31.412v347.23h-326.27v-347.23zm326.27 399.18c0 17.32-14.092 31.412-31.413 31.412h-263.44c-17.321 0-31.413-14.092-31.413-31.412v-31.949h326.27v31.949z" />
+              <text transform="matrix(1.0832 0 0 1.2882 -17.862 -92.583)" x="215.256817" y="428.9737" fill="#ffffff" fill-opacity="null" font-family="'Bitter','Trebuchet MS', Gadget, sans-serif" font-size="24" stroke="null" stroke-opacity="null" stroke-width="0" xml:space="preserve">kindle</text>
+              </g>
+            </svg>
+
           </div>
           <div class="home-section-text col-12 ml-auto col-md-6 col-lg-5">
             <h1>
-              Send once, read everywhere.
+              
             </h1>
             <p class="text-h3">
             Reading your documents and web content on Kindle is now easier than ever. Use <b>dropbooks</b> to read on your Kindle devices and free reading apps on iPhone, iPad, iPod touch and Android phone and tablet.
@@ -73,7 +38,7 @@
             Ipsum vitae labore quam et sapiente. Exercitationem qui nobis inventore asperiores odio. Doloribus minus est dicta eius.
             </p>
             <p><a class="btn is-dark btn-round mt-4 mb-5 mb-md-0"
-                  href="send.html">Send now</a></p>
+                  href="/send" id="send-now" >Send now</a></p>
           </div>
         </div>
       </div>
@@ -87,10 +52,10 @@
           <div class="col text-left">
             <h2>Far far away...</h2>
 
-            <p>Far far away, behind the word mountains, far from the countries <a href="https://www.froala.com">Vokalia</a> and <a href="https://www.froala.com">Consonantia</a>, there live the blind texts. Separated they live in Bookmarksgrove right at the coast
+            <p>Far far away, behind the word mountains, far from the countries <a href="">Vokalia</a> and <a href="">Consonantia</a>, there live the blind texts. Separated they live in Bookmarksgrove right at the coast
             of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
 
-            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the <a href="https://www.froala.com">Little Blind Text</a>          should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their
+            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the <a href="">Little Blind Text</a>          should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their
             agency, where they abused her for their.</p>
           </div>
         </div>
@@ -125,6 +90,7 @@
         </div>
       </div>
     </section>
+
     <footer class="fdb-block footer-small fp-active" data-block-type="footers" data-id="13">
       <div class="container">
         <div class="row text-center">

@@ -1,64 +1,65 @@
 @font-face {
-    font-family: Bitter;
-    src: url('./assets/fonts/Bitter-Regular.otf');
+  font-family: Bitter;
+  src: url('./assets/fonts/Bitter-Regular.otf');
 
 
 }
 
 body, .home-section-text {
-    font-family: 'Bitter' !important;
+  font-family: 'Bitter' !important;
+  /* background: url('https://images.pexels.com/photos/988872/pexels-photo-988872.jpeg'); */
 }
 
 
 header.nav-bg {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    margin-bottom: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-bottom: 10px;
 
 }
 
 a.btn {
-    background-color: #74A6AD;
-    font-color: black;
+  background-color: #74A6AD;
+  font-color: black;
 }
 
 
 .fdb-block.pb-0 {
-    padding-top: 20px;
-    width: 80%;
-    margin: auto;
-    color: #323232; 
+  padding-top: 20px;
+  width: 80%;
+  margin: auto;
+  color: #323232; 
 }
 
 
 nav h3 {
-    color: white;
-    vertical-align: center;
+  color: white;
+  vertical-align: center;
 }
 
 .nav-bg {
-    background: #323232;
-    border-bottom: 10px #74A6AD solid;
+  background: #323232;
+  border-bottom: 10px #74A6AD solid;
 }
 
 header .navbar-nav a.nav-link {
-    color: white;
+  color: white;
 }
 
 
 
 .nav-link:hover, .nav-link:active {
-    color: white;
+  color: white;
 }
 
 .fa.fa-navicon, .fas.fa-user {
-    color: white;
+  color: white;
 }
 
 
 .fdb-block .fdb-touch {
-    border-top: solid 5px #74a6ad;
+  border-top: solid 5px #74a6ad;
 }
 
 
@@ -70,3 +71,68 @@ header .navbar-nav a.nav-link {
 img.img-fluid {
   filter: hue-rotate(59deg);
 }
+
+header .navbar-nav .active a.nav-link {
+  color: #74a6ad;
+}
+
+#animate-book {
+  position: relative;
+  left: 115px;
+  top: -200px;
+  opacity: 0;
+  animation-delay: 2s;
+  animation-name: book;
+  /* animation-direction: alternate; */
+  animation-duration: 8s;
+  z-index: 50;
+  filter: invert(24%) sepia(10%) saturate(28%) hue-rotate(54deg) brightness(91%) contrast(91%);
+  transition: visibility 0s 2s, opacity 2s linear;
+  animation-iteration-count: infinite;
+
+}
+
+#animate-book2 {
+  position: relative;
+  left: 5px;
+  top: -200px;
+  opacity: 0;
+  animation-delay: 5s;
+  animation-name: book2;
+  /* animation-direction: alternate; */
+  animation-duration: 8s;
+  z-index: 51;
+  filter: invert(24%) sepia(10%) saturate(28%) hue-rotate(54deg) brightness(91%) contrast(91%);
+  transition: visibility 0s 2s, opacity 2s linear;
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes  book {
+
+  0%    { left: 115px; top:-250px; }
+  1%    {  opacity:1; }
+  50%   { top: 170px; display: none; opacity: 0;} 
+  100%  { display:none; }
+
+
+}
+
+
+@keyframes  book2 {
+
+  0%    { top:-250px; }
+  1%    {  opacity:1; }
+  50%   { top: 170px; display: none; opacity: 0;} 
+  100%  { display:none; }
+
+}
+
+.home-section>h1 {
+  font-weight: bold;
+}
+
+#animate-book {
+  filter: hue-rotate(180deg);
+}
+
