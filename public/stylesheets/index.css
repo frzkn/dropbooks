@@ -1,13 +1,12 @@
 @font-face {
   font-family: Bitter;
-  src: url('./assets/fonts/Bitter-Regular.otf');
+  src: url('../assets/fonts/Bitter-Regular.otf');
 
 
 }
 
 body, .home-section-text {
   font-family: 'Bitter' !important;
-  /* background: url('https://images.pexels.com/photos/988872/pexels-photo-988872.jpeg'); */
 }
 
 

@@ -1,6 +1,5 @@
 // refactor this spaghetti
 // separate cookies
-// console.log(loginEmail+loginPassword);
 // separate nodemailer
 var express = require('express');
 var router = express.Router();
@@ -44,7 +43,6 @@ router.post('/login', function(req, res) {
     }
     else {
       req.userSession.userId = results[0].id;
-      console.log(req.userSession);
       return res.redirect('/send'); }
   });
 });
@@ -87,16 +85,22 @@ router.get('/logout', function(req, res, next) {
 
 router.post('/account', (req, res, next) => {
 
-
   connection.query(`select * from users where id="${req.userSession.userId}"` , (err, results, fields) => {
-    if(req.body.kindle_email == results[0].kindle_email){
+    if(req.body.kindleemail == results[0].kindle_email) {
       console.log('why so stupid');
-      return res.redirect('/account');
+      return res.redirect('/');
     }
-    else {
-      connection.query(`update users set kindle_email="${req.body.kindle_email}" where id="${req.userSession}" `);
-      return res.redirect('/account');
-    }
+    connection.query(`update users set kindle_email="${req.body.kindleemail}" where id="${req.userSession.userId}" `,(err, results2, fields) => {
+      return res.render('account', {
+        loginStatus: true,
+        viewName: 'account',
+
+        firstname: results[0].firstname,
+        email: results[0].email,
+        kindle_email: req.body.kindleemail
+      } );
+    });
+
 
   });
 });
@@ -107,7 +111,6 @@ router.get('/send', function(req, res, next) {
   if (!(req.userSession && req.userSession.userId)) {
     return res.redirect('/login');
   }
-  console.log('HERE IS THE USER ID '+ req.userSession.userId);
   connection.query(`select id from users where id="${req.userSession.userId}"` , (err, results, fields) => {
     if (err) {
       return next(err);
@@ -132,10 +135,7 @@ router.post('/send', function(req, res, next){
     if (err) {
       console.log("mysql error:" + err);
     }
-    console.log("Here are the results");
-    console.log(results);
     toEmail = results[0].kindle_email;
-    console.log('inside the call back'+ toEmail);
     console.log('sending email to ' + toEmail);
 
     // TODO implement convert feature for PDFs
@@ -145,7 +145,7 @@ router.post('/send', function(req, res, next){
       service: 'gmail',
       auth: {
         user: 'dropbookskindle@gmail.com',
-        pass: ''
+        pass: 'comeonsupermansayyourstupidline'
       }
     });
     // get user's kindle email address here
@@ -177,6 +177,7 @@ router.post('/send', function(req, res, next){
 router.get('/team', function(req, res, next) {
   res.render('team',{ viewName: "", loginStatus: false });
 })
+
 
 router.get('/account', function(req, res, next) {
 
