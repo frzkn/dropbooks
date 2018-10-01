@@ -1,0 +1,41 @@
+<%- include('./header.ejs') %>
+
+<section class="fdb-block" data-block-type="forms" data-id="2" draggable="true">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+      <form method="post" action="account" id="account-form">
+        <div class="row">
+          <div class="col text-center">
+          <img src="assets/images/defaultPhoto.png" width="150px" alt="">
+            <h1><%= firstname%></h1>
+            <p class="text-h3">dropbook user</p>
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col mt-4">
+            <h4> Email</h4>
+            <input type="email" value="<%=email%>" class="form-control" placeholder="" readonly>
+          </div>
+        </div>
+        <div class="row align-items-center mt-4">
+          <div class="col">
+            <h4> Kindle Email</h4>
+            <input type="email" name="kindle_email" value="<%=kindle_email%>"class="form-control" placeholder="Email">
+          </div>
+        </div>
+
+            <input type="submit" value="Save Changes"class="btn mt-4">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

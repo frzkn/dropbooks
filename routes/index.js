@@ -70,7 +70,7 @@ router.post('/register', function(req, res, next) {
     }
 
     if (results.length==0) {
-      connection.query(`insert into users (email, kindle_email, password ) values ("${req.body.email}","${req.body.kindleemail}","${req.body.password}");`);
+      connection.query(`insert into users (email, kindle_email, password ,firstname) values ("${req.body.email}","${req.body.kindleemail}","${req.body.password}","${req.body.username}");`);
       return res.redirect('/');
     }
 
@@ -83,6 +83,24 @@ router.get('/logout', function(req, res, next) {
   res.redirect('/');
 
 });
+
+
+router.post('/account', (req, res, next) => {
+
+
+  connection.query(`select * from users where id="${req.userSession.userId}"` , (err, results, fields) => {
+    if(req.body.kindle_email == results[0].kindle_email){
+      console.log('why so stupid');
+      return res.redirect('/account');
+    }
+    else {
+      connection.query(`update users set kindle_email="${req.body.kindle_email}" where id="${req.userSession}" `);
+      return res.redirect('/account');
+    }
+
+  });
+});
+
 
 router.get('/send', function(req, res, next) {
   // Check if session is unavailable
@@ -152,13 +170,44 @@ router.post('/send', function(req, res, next){
 
     });
 
- });
+  });
   return res.redirect('/');
 });
 
 router.get('/team', function(req, res, next) {
   res.render('team',{ viewName: "", loginStatus: false });
 })
+
+router.get('/account', function(req, res, next) {
+
+
+  if(!(req.userSession.userId && req.userSession)) {
+    return res.redirect('/login');
+  }
+
+  else {
+
+    connection.query(`select * from users where id="${req.userSession.userId}"` , (err, results, fields) => {
+      if (err) {
+        return next(err);
+      }
+
+      if (!results[0].id) {
+        return res.redirect('/login');
+      }
+      console.log(results);
+
+      return res.render('account', {
+        loginStatus: true,
+        viewName: 'account',
+        firstname: results[0].firstname,
+        email: results[0].email,
+        kindle_email: results[0].kindle_email
+      } );
+
+    });
+  }
+});
 
 
 

@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(sessions({
   cookieName:'userSession',
   secret: 'killyourself',
-  duration: 30 * 60 * 1000
+  duration: 30 * 60 * 1000 // Lasts 30 minutes.
 }));
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -50,10 +50,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-//app.use(function (req, res, next) => {
-//  //check for session/cookie
-//});
 
 
 module.exports = app;
